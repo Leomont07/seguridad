@@ -28,10 +28,20 @@ const upload = multer({ storage: storage });
 
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '230304',
-    database: 'bdelectronica'
+    host: '162.241.60.209',
+    user: 'leonario_07',
+    password: 'Leonardocr7.',
+    port: 3306,
+    database: 'leonario_seguridad'
+});
+
+// Comprobación de conexión
+connection.connect((err) => {
+  if (err) {
+      console.error('Error al conectar a la base de datos:', err.message);
+      return;
+  }
+  console.log('Conexión exitosa a la base de datos.');
 });
 
 
